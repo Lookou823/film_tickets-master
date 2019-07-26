@@ -1,0 +1,99 @@
+{% extends 'movie/base.html' %}
+{% block head %}
+
+<meta name="keywords" content="爬手组, 首页, 电影票查询, 电影"/>
+<meta name="description" content="查询不同网站（美团/淘票票/时光/糯米） 同一部电影的电影票价格"/>
+
+
+{% endblock %}
+
+{% block body %}
+{#<div>#}
+<div class="movie-base" style=" background-image: url('{{ cover.cover_img.url }}') ">
+<div>
+    <div class="movie-side-block">
+        <div class="movie-side-block-up">
+            <div class="movie-side-block-up-left"></div>
+{#            <div class="movie-side-block-up-left"></div>#}
+            <div class="movie-side-block-up-right">
+                <p class="h1 movie-side-up-title">本周推荐电影</p>
+                <p class="h3 movie-side-up-title">{{ top.name }}</p>
+            </div>
+        </div>
+        <div class="movie-side-block-down">
+{#            <div class="movie-side-block-down-left">#}
+{#            </div>#}
+            <div class="movie-side-block-down-left">
+            </div>
+            <div class="movie-side-block-down-left">
+                <a href="{{ top.id }}">
+                    <img class="movie-side-down-img" src="{{ top.poster.url  }}" alt="{{ top.name }}">
+                </a>
+                <div class="movie-side-down-ins">
+                    <p>导演: {{ top.directors }}</p>
+                    <p>主演: {{ top.casts }}</p>
+                    <P>豆瓣评分: {{ top.rating }}</P>
+                    <p>类型: {{ top.genes }}</p>
+                </div>
+            </div>
+{#             <div class="movie-side-block-down-left">#}
+{#                <img style="background-color: white; padding-left: 30px" width="150%" height="100%" src="{{ top.WordCloud.url  }}" alt="{{ top.name }}">#}
+{#            </div>#}
+        </div>
+
+    </div>
+
+{#    <div class="movie-bottom">#}
+{#        <div class="movie-bottom-center center-block">#}
+{#            <ul class="list-inline text-center">#}
+{#            {% for m in movies %}#}
+{#            <li><a href="{{ m.id }}" class="movie-bottom-li">#}
+{#                <img class="movie-li-img" src="{{ m.poster.url }}" alt="{{ m.name }}">#}
+{#                <div class="movie-li-title"><p class="movie-li-title-p">{{ m.name }}</p></div>#}
+{#                </a>#}
+{#            </li>#}
+{#            {% endfor %}#}
+{#        </ul>#}
+{#        </div>#}
+{#    </div>#}
+    <div class="panel">
+        <div class="panel-header">
+{#          <span class="panel-more">#}
+{#            <span class="panel-arrow panel-arrow-red"></span>#}
+{#          </span>#}
+          <span class="panel-title">
+                  <span class="textcolor_red">正在热映{{ movies.count }}部</span>
+          </span>
+        </div>
+        <div class="panel-content">
+                <dl class="movie-list">
+                    {% for m in movies %}
+              <dd>
+                    <div class="movie-item">
+                      <a href="{{ m.id }}" target="_blank" data-act="playingMovie-click" data-val="{{ m.id }}">
+                      <div class="movie-poster">
+                        <img src="{{ m.poster.url }}">
+                        <div class="movie-overlay movie-overlay-bg">
+                          <div class="movie-info">
+                            <div class="movie-score">{{ m.rating }}</div>
+                            <div class="movie-title movie-title-padding" title="{{ m.name }}">{{ m.name }}</div>
+                          </div>
+                        </div>
+                      </div>
+                      </a>
+{#                <div class="movie-detail movie-detail-strong movie-sale">#}
+{#                  <a href="/cinemas?movieId=1218141" class="active" target="_blank" data-act="salePlayingMovie-click" data-val="{movieid:1218141}">购 票</a>#}
+{#                </div>#}
+                      <div class="movie-ver"></div>
+                    </div>
+
+        </dd>
+                    {% endfor %}
+
+            </dl>
+        </div>
+      </div>
+    </div>
+
+    <footer></footer>
+{% endblock %}
