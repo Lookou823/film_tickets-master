@@ -3,7 +3,10 @@
 
 #### 运行效果
 ![首页](https://github.com/zstu-lly/film_tickets-master/blob/master/images/IMG_5276.PNG)
-
+![](https://github.com/zstu-lly/film_tickets-master/blob/master/images/IMG_5278.PNG)
+![搜索附近电影院](https://github.com/zstu-lly/film_tickets-master/blob/master/images/IMG_5279.PNG)
+![词云](https://github.com/zstu-lly/film_tickets-master/blob/master/images/IMG_5281.PNG)
+![查票结果](https://github.com/zstu-lly/film_tickets-master/blob/master/images/IMG_5256.PNG)
 
 #### 运行环境
 
