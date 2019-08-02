@@ -1,5 +1,10 @@
 ## 基于django的电影票比价网
 ## 在crossin的编程教室的项目上进行了一些功能的扩充，原项目地址：https://github.com/zx576/film_tickets
+
+#### 运行效果
+
+
+
 #### 运行环境
 
 - python 3+
