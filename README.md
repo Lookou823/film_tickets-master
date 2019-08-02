@@ -2,7 +2,7 @@
 ## 在crossin的编程教室的项目上进行了一些功能的扩充，原项目地址：https://github.com/zx576/film_tickets
 
 #### 运行效果
-
+![首页](https://github.com/zstu-lly/film_tickets-master/blob/master/images/IMG_5276.PNG)
 
 
 #### 运行环境
