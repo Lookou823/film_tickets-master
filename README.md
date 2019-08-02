@@ -9,8 +9,9 @@
 ![查票结果](https://github.com/zstu-lly/film_tickets-master/blob/master/images/IMG_5256.PNG)
 
 #### 更新日志
+- 增加了播放预告片功能
 - 增加了搜索附近影院功能
-- 增加了猫眼电影爬虫
+- 重新实现了时光网、猫眼电影、百度糯米爬虫
 - 淘票票电影暂未实现
 
 #### 运行环境
