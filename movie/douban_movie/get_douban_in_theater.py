@@ -9,6 +9,7 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.request import urlretrieve
 from liuyongdi import getwordcloudImage
+import datetime
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(BASE_DIR)
@@ -65,6 +66,11 @@ class DouBanMovie:
         response = requests.get(url, headers=self.headers)
         response.raise_for_status()
         soup = BeautifulSoup(response.text, "lxml")
+        release_date = soup.find("span", property="v:initialReleaseDate").string
+        # 上映时间还没到
+        if datetime.datetime.now().strftime('%Y-%m-%d') < release_date[:10]:
+            return
+        
         name = soup.find("span", property="v:itemreviewed").string    # 电影名
         directors = [tag.string for tag in soup.find_all("a", rel="v:directedBy")]
         casts = [tag.string for tag in soup.find_all("a", rel="v:starring")][:5]
